@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         gray: {
+          50: "rgba(255,255,255,0.5)",
           100: "#FAFAFA",
           200: "#F1F1F1",
           900: "#101010",
@@ -25,6 +26,12 @@ const config: Config = {
         md: "768px",
         lg: "1024px",
         xl: "1440px",
+      },
+      maxWidth: {
+        mobile: "500px",
+        tablet: "689px",
+        "desktop-sm": "896px",
+        "desktop-lg": "1110px",
       },
     },
   },
