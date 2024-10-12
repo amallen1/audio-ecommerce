@@ -1,24 +1,19 @@
+import Button from "./Button";
 const Hero = () => {
   return (
-    <div className="h-screen bg-[url('../../public/assets/home/mobile/image-header.jpg')] bg-no-repeat bg-cover bg-[center] smd:bg-[url('../../public/assets/home/tablet/image-header.jpg')] smd:bg-top"></div>
-    //     <div className="relative h-screen">
-    //       <div className="absolute inset-0 bg-cover bg-center bg-[url('/path/to/your/hero-image.jpg')]">
-    //         {/* Hero image */}
-    //       </div>
-    //       <div className="container mx-auto px-4 py-16 text-white">
-    //         <h1 className="text-4xl font-bold">XX99 Mark II Headphones</h1>
-    //         <p className="text-lg mt-4">
-    //           Experience natural, lifelike audio and exceptional build quality made
-    //           for the passionate music enthusiast.
-    //         </p>
-    //         <button
-    //           className="bg-blue-500
-    //  text-white px-4 py-2 mt-4 rounded-md"
-    //         >
-    //           See Product
-    //         </button>
-    //       </div>
-    //     </div>
+    <div className="max-w-[379px] text-center m-auto lg:m-0 lg:text-left">
+      <span className="text-overline block text-white/50 mb-4 md:mb-6">
+        New product
+      </span>
+      <h1 className="text-4xl tracking-[1.29px] mb-6 md:text-[56px]/[58px] md:tracking-[2px]">
+        XX99 Mark II Headphones
+      </h1>
+      <p className="mb-[28px] text-white/75 smd:mb-10 smd:px-3 lg:pl-0">
+        Experience natural, lifelike audio and exceptional build quality made
+        for the passionate music enthusiast.
+      </p>
+      <Button variant="primary">See Product</Button>
+    </div>
   );
 };
 export default Hero;

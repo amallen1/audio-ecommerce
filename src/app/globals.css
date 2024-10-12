@@ -3,6 +3,19 @@
 @tailwind utilities;
 
 body {
-  background-color: black;
   color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.text-overline {
+  text-transform: uppercase;
 }

@@ -33,6 +33,21 @@ const config: Config = {
         "desktop-sm": "896px",
         "desktop-lg": "1110px",
       },
+      backgroundImage: {
+        "hero-sm": "url('/assets/home/mobile/image-hero.jpg')",
+        "hero-md": "url('/assets/home/tablet/image-hero.jpg')",
+        "hero-lg": "url('../../public/assets/home/desktop/image-hero.jpg')",
+      },
+      fontSize: {
+        overline: [
+          "0.875rem",
+          {
+            lineHeight: "1.1875rem",
+            letterSpacing: ".625rem",
+            fontWeight: "400",
+          },
+        ],
+      },
     },
   },
   plugins: [],

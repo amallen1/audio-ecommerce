@@ -8,7 +8,7 @@ const Nav = () => {
   const pathname = usePathname();
   return (
     <header
-      className={`${pathname === "/" ? "absolute w-full" : "bg-black"}
+      className={`${pathname === "/" ? "bg-[rgb(25,25,25)]" : "bg-black"}
         `}
     >
       <nav className="flex justify-between items-center py-8 px-6 border-b-[1px] border-[rgba(255,255,255,.10)] max-w-tablet m-auto md:px-0 lg:max-w-desktop-sm xl:max-w-desktop-lg">
