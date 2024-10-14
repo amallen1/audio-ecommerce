@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
 
         <div className="mb-12 md:mb-20 xl:mb-14">
-          <p className="text-[.9375rem] text-gray-50 font-medium leading-[25px] lg:pr-[30%] xl:pr-[51%]">
+          <p className="text-gray-50 lg:pr-[30%] xl:pr-[51%]">
             Audiophile is an all in one stop to fulfill your audio needs.
             We&apos;re a small team of music lovers and sound specialists who
             are devoted to helping you get the most out of personal audio. Come

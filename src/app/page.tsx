@@ -1,4 +1,5 @@
 import CategoryLinks from "./components/CategoryLinks";
+import FeaturedProducts from "./components/FeaturedProducts";
 import Hero from "./components/Hero";
 
 export default function Home() {
@@ -9,9 +10,17 @@ export default function Home() {
           <Hero />
         </div>
       </div>
-      <div className="py-24 max-w-[327px] smd:max-w-mobile md:max-w-tablet m-auto lg:max-w-desktop-sm xl:max-w-desktop-lg">
-        <CategoryLinks />
+
+      <div className="py-24 max-w-[327px] m-auto smd:max-w-mobile md:max-w-tablet  lg:pt-0 lg:max-w-desktop-sm xl:py-28 xl:max-w-desktop-lg">
+        <div className="mb-28 md:mb-24 xl:mb-40">
+          <CategoryLinks />
+        </div>
+
+        <div>
+          <FeaturedProducts />
+        </div>
       </div>
+
     </div>
   );
 }
