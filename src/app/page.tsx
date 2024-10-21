@@ -1,3 +1,4 @@
+import About from "./components/About";
 import CategoryLinks from "./components/CategoryLinks";
 import FeaturedProducts from "./components/FeaturedProducts";
 import Hero from "./components/Hero";
@@ -16,11 +17,14 @@ export default function Home() {
           <CategoryLinks />
         </div>
 
-        <div>
+        <div className="mb-32 md:mb-24 xl:mb-48">
           <FeaturedProducts />
         </div>
-      </div>
 
+        <div>
+          <About />
+        </div>
+      </div>
     </div>
   );
 }

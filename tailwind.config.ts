@@ -37,6 +37,13 @@ const config: Config = {
         "hero-sm": "url('/assets/home/mobile/image-hero.jpg')",
         "hero-md": "url('/assets/home/tablet/image-hero.jpg')",
         "hero-lg": "url('/assets/home/desktop/image-hero.jpg')",
+        "circle-pattern": "url('/assets/home/desktop/pattern-circles.svg')",
+        "mobile-zx7": "url('/assets/home/mobile/image-speaker-zx7.jpg')",
+        "tablet-zx7": "url('/assets/home/tablet/image-speaker-zx7.jpg')",
+        "desktop-zx7": "url('/assets/home/desktop/image-speaker-zx7.jpg')",
+        "mobile-yx1": "url('/assets/home/mobile/image-earphones-yx1.jpg')",
+        "tablet-yx1": "url('/assets/home/tablet/image-earphones-yx1.jpg')",
+        "desktop-yx1": "url('/assets/home/desktop/image-earphones-yx1.jpg')",
       },
       fontSize: {
         overline: [
