@@ -4,10 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import NavLinks from "./NavLinks";
-import MenuModal from "./MenuModal";
+import MenuModal from "./Modal/MenuModal";
+import CartModal from "./Modal/CartModal";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
   const pathname = usePathname();
   return (
     <header
@@ -39,7 +41,7 @@ const Nav = () => {
           <NavLinks />
         </div>
 
-        <div>
+        <div onClick={() => setIsCartOpen(!isCartOpen)}>
           <Image
             src="/assets/shared/desktop/icon-cart.svg"
             width={23}
@@ -48,7 +50,12 @@ const Nav = () => {
           />
         </div>
       </nav>
-      {isMenuOpen && <MenuModal isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />}
+      {isMenuOpen && (
+        <MenuModal isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      )}
+      {isCartOpen && (
+        <CartModal isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+      )}
     </header>
   );
 };
