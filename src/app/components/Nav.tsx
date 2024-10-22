@@ -2,17 +2,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import NavLinks from "./NavLinks";
+import MenuModal from "./MenuModal";
 
 const Nav = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const pathname = usePathname();
   return (
     <header
       className={`${pathname === "/" ? "bg-[rgb(25,25,25)]" : "bg-black"}
         `}
     >
-      <nav className="flex justify-between items-center py-8 px-6 border-b-[1px] border-[rgba(255,255,255,.10)] max-w-tablet m-auto md:px-0 lg:max-w-desktop-sm xl:max-w-desktop-lg">
-        <div className="lg:hidden">
+      <nav className="relative flex justify-between items-center py-8 px-6 border-b-[1px] border-[rgba(255,255,255,.10)] max-w-tablet m-auto md:px-0 lg:max-w-desktop-sm xl:max-w-desktop-lg">
+        <div className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <Image
             src="/assets/shared/mobile/icon-hamburger.svg"
             width={16}
@@ -45,6 +48,7 @@ const Nav = () => {
           />
         </div>
       </nav>
+      {isMenuOpen && <MenuModal isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />}
     </header>
   );
 };
