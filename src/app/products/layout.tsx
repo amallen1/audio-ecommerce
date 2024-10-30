@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import CategoryLinks from "../components/CategoryLinks";
+import CategoryLinks from "../components/Products/CategoryLinks";
 import About from "../components/About";
 
 export default function CategoryLayout({
@@ -12,19 +12,22 @@ export default function CategoryLayout({
   const array = path.split("/");
   const category: string = array[2];
   return (
-    <div className="">
+    <div>
       <div className="bg-black flex justify-center py-8 md:py-24">
         <h1 className="text-white text-3xl">{category.toUpperCase()}</h1>
       </div>
 
-      <div>{children}</div>
+      <div className="pt-16 max-w-[327px] m-auto smd:max-w-mobile md:max-w-tablet md:pt-28 lg:max-w-desktop-sm xl:py-28 xl:max-w-desktop-lg xl:pb-40">
 
-      <div className="py-24 max-w-[327px] m-auto smd:max-w-mobile md:max-w-tablet  lg:pt-0 lg:max-w-desktop-sm xl:py-28 xl:max-w-desktop-lg">
-        <CategoryLinks />
-      </div>
+        <div>{children}</div>
 
-      <div className="my-10">
-        <About />
+        <div className="mt-44 mb-28 xl:mb-40">
+          <CategoryLinks />
+        </div>
+
+        <div>
+          <About />
+        </div>
       </div>
     </div>
   );

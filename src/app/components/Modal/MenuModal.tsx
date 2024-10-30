@@ -1,5 +1,5 @@
 import { Dialog, DialogPanel, DialogBackdrop } from "@headlessui/react";
-import CategoryLinks from "../CategoryLinks";
+import CategoryLinks from "../Products/CategoryLinks";
 
 function MenuModal({
   isMenuOpen,

@@ -2,7 +2,7 @@ import Image from "next/image";
 const About = () => {
   return (
     <div className="text-center lg:grid lg:grid-cols-2 lg:gap-x-20">
-      <div className="mb-10 md:mb-16 lg:order-1">
+      <div className="mb-10 md:mb-16 lg:order-1 lg:mb-0">
         <Image
           src="/assets/shared/mobile/image-best-gear.jpg"
           width={327}
