@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../Button";
+import Link from "next/link";
 
 interface ProductProps {
   name: string;
@@ -10,7 +11,9 @@ interface ProductProps {
     desktop: string;
   };
   description: string;
-  isOddIndex: boolean;
+  alternateOrder: boolean;
+  slug: string;
+  category: string;
 }
 
 const ProductPreview = ({
@@ -18,13 +21,15 @@ const ProductPreview = ({
   isNew,
   categoryImage,
   description,
-  isOddIndex,
+  alternateOrder,
+  slug,
+  category,
 }: ProductProps) => {
   return (
     <div className="xl:flex xl:items-center xl:gap-x-[125px]">
       <div
         className={`flex justify-center mb-8 md:mb-12 xl:mb-0 ${
-          isOddIndex && "order-1"
+          alternateOrder && "order-1"
         }`}
       >
         <Image
@@ -55,13 +60,13 @@ const ProductPreview = ({
             New product
           </span>
         ) : null}
-        <h2 className="text-black text-3xl tracking-[1px] mb-6 md:text-[2.5rem]/[2.75rem] md:px-40 md:tracking-[1.43px] xl:px-0 xl:mb-8">
+        <h2 className="text-3xl tracking-[1px] mb-6 md:text-[2.5rem]/[2.75rem] md:px-40 md:tracking-[1.43px] xl:px-0 xl:mb-8">
           {name}
         </h2>
-        <p className="text-black/50 mb-6 md:px-16 xl:px-0 xl:mb-10">
-          {description}
-        </p>
-        <Button variant="primary">See Product</Button>
+        <p className="mb-6 md:px-16 xl:px-0 xl:mb-10">{description}</p>
+        <Button variant="primary" urlLink={`/products/${category}/${slug}`}>
+          See Product
+        </Button>
       </div>
     </div>
   );

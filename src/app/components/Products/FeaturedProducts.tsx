@@ -31,7 +31,7 @@ const FeaturedProducts = () => {
         </div>
 
         <div className="text-center lg:text-left xl:pl-32">
-          <h2 className="text-4xl mb-6 md:text-[56px]/[58px] tracking-[1.29px] md:tracking-[2px]">
+          <h2 className="text-white text-4xl mb-6 md:text-[56px]/[58px] tracking-[1.29px] md:tracking-[2px]">
             ZX9
             <br /> Speaker
           </h2>

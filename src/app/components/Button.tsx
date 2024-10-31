@@ -1,10 +1,14 @@
 "use client";
+import { useRouter } from "next/navigation";
 
 interface ButtonsProps {
   children: React.ReactNode;
   variant: "primary" | "secondary" | "transparent";
   fullWidth?: boolean;
   className?: string;
+  actionType?: "link" | "addToCart" | "checkout";
+  urlLink?: string;
+  category?: string;
 }
 
 const Button = ({
@@ -12,7 +16,11 @@ const Button = ({
   variant,
   fullWidth = false,
   className = "",
+  actionType = "link",
+  urlLink = "",
 }: ButtonsProps) => {
+  const router = useRouter();
+
   const baseClasses = `px-[30px] py-[15px] text-[13px] font-bold tracking-[1px] uppercase leading-[18px]`;
 
   const variantClasses = {
@@ -24,9 +32,20 @@ const Button = ({
   const variantStyles = variantClasses[variant];
   const fullWidthClass = fullWidth ? "w-full" : "";
 
+  const handleClick = () => {
+    if (actionType === "link") {
+      router.push(urlLink);
+    } else if (actionType === "addToCart") {
+      //Todo
+    } else {
+      //checkout actions
+    }
+  };
+
   return (
     <button
       className={`${baseClasses} ${variantStyles} ${fullWidthClass} ${className}`}
+      onClick={handleClick}
     >
       {children}
     </button>

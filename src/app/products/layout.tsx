@@ -25,7 +25,7 @@ export default function CategoryLayout({
           <CategoryLinks />
         </div>
 
-        <div>
+        <div className="mb-28">
           <About />
         </div>
       </div>

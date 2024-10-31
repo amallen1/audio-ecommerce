@@ -10,6 +10,7 @@ p {
   font-size: 0.9375rem;
   font-weight: 500;
   line-height: 25px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 h1,
@@ -20,6 +21,7 @@ h5,
 h6 {
   text-transform: uppercase;
   font-weight: bold;
+  color: black;
 }
 
 .text-overline {

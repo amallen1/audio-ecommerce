@@ -15,7 +15,7 @@ const QuantitySelector = () => {
   };
 
   return (
-    <div className="bg-gray-100 flex gap-3 text-black px-3 py-2 w-[90px] justify-center items-center">
+    <div className="bg-gray-200 flex gap-3 text-black px-3 py-2 w-[90px] justify-center items-center">
       <button
         className={`text-black/25 hover:text-orange-200 text-lg tracking-[1px] ${
           quantity === 0 ? "cursor-not-allowed" : ""
