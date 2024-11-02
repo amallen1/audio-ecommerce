@@ -1,18 +1,20 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import Button from "../Button";
 import data from "../../data.json";
 import QuantitySelector from "../QuantitySelector";
+import Gallery from "./Gallery";
+
+interface Image {
+  mobile: string;
+  tablet: string;
+  desktop: string;
+}
 
 interface ProductProps {
   name: string;
-  image: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
+  image: Image;
   category: string;
   new: boolean;
   description: string;
@@ -22,7 +24,16 @@ interface ProductProps {
     quantity: number;
     item: string;
   }[];
-  // gallery (object of objects), others (array of objects)
+  gallery: {
+    first: Image;
+    second: Image;
+    third: Image;
+  };
+  others: {
+    slug: string;
+    name: string;
+    image: Image;
+  }[];
 }
 
 const ProductDetail = ({ slug }: { slug: string }) => {
@@ -32,7 +43,6 @@ const ProductDetail = ({ slug }: { slug: string }) => {
     (item) => item.slug === slug
   );
 
-  // Handle if the product is not found
   if (!productData) {
     return <div>Product not found</div>;
   }
@@ -46,6 +56,7 @@ const ProductDetail = ({ slug }: { slug: string }) => {
     features,
     price,
     includes,
+    gallery,
   } = productData;
 
   return (
@@ -60,21 +71,21 @@ const ProductDetail = ({ slug }: { slug: string }) => {
       <div className="md:flex md:items-center md:mb-28 md:gap-x-16 xl:mb-40 xl:gap-x-32">
         <div className="flex justify-center mb-8 md:mb-0">
           <Image
-            src={`${image.mobile.substring(1)}`}
+            src={image.mobile}
             width={327}
             height={352}
             alt={`${name}`}
             className="rounded-lg smd:w-[500px] md:hidden"
           />
           <Image
-            src={`${image.tablet.substring(1)}`}
+            src={image.tablet}
             width={281}
             height={480}
             alt={`${name}`}
             className="rounded-lg hidden md:block xl:hidden"
           />
           <Image
-            src={`${image.desktop.substring(1)}`}
+            src={image.desktop}
             width={540}
             height={560}
             alt={`${name}`}
@@ -102,7 +113,7 @@ const ProductDetail = ({ slug }: { slug: string }) => {
         </div>
       </div>
 
-      <div className="xl:flex xl:gap-x-[125px]">
+      <div className="mb-20 md:mb-28 xl:mb-40 xl:flex xl:gap-x-[125px]">
         <div className="mb-20 xl:basis-[64%]">
           <h2 className="text-2xl tracking-[0.86px] mb-6 md:text-3xl">
             Features
@@ -131,6 +142,10 @@ const ProductDetail = ({ slug }: { slug: string }) => {
             })}
           </div>
         </div>
+      </div>
+
+      <div>
+        <Gallery gallery={gallery} />
       </div>
     </div>
   );

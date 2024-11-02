@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Button from "../Button";
-import Link from "next/link";
 
 interface ProductProps {
   name: string;
@@ -33,21 +32,21 @@ const ProductPreview = ({
         }`}
       >
         <Image
-          src={`${categoryImage.mobile.substring(1)}`}
+          src={categoryImage.mobile}
           width={327}
           height={352}
           alt={`${name}`}
           className="rounded-lg md:hidden"
         />
         <Image
-          src={`${categoryImage.tablet.substring(1)}`}
+          src={categoryImage.tablet}
           width={689}
           height={352}
           alt={`${name}`}
           className="rounded-lg hidden md:block xl:hidden"
         />
         <Image
-          src={`${categoryImage.desktop.substring(1)}`}
+          src={categoryImage.desktop}
           width={540}
           height={560}
           alt={`${name}`}
