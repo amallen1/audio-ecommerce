@@ -11,21 +11,23 @@ export default function CategoryLayout({
   const path = usePathname();
   const array = path.split("/");
   const category: string = array[2];
+
   return (
     <div>
-      <div className="bg-black flex justify-center py-8 md:py-24">
-        <h1 className="text-white text-3xl">{category.toUpperCase()}</h1>
-      </div>
+      {!category.includes("-") && (
+        <div className="bg-black flex justify-center py-8 md:py-24">
+          <h1 className="text-white text-3xl">{category.toUpperCase()}</h1>
+        </div>
+      )}
 
-      <div className="pt-16 max-w-[327px] m-auto smd:max-w-mobile md:max-w-tablet md:pt-28 lg:max-w-desktop-sm xl:py-28 xl:max-w-desktop-lg xl:pb-40">
-
+      <div className="pt-16 mb-28 max-w-[327px] m-auto smd:max-w-mobile md:max-w-tablet md:pt-28 lg:max-w-desktop-sm xl:pt-28 xl:max-w-desktop-lg xl:mb-40">
         <div>{children}</div>
 
         <div className="mt-44 mb-28 xl:mb-40">
           <CategoryLinks />
         </div>
 
-        <div className="mb-28">
+        <div>
           <About />
         </div>
       </div>

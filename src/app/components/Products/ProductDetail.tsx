@@ -146,7 +146,7 @@ const ProductDetail = ({ slug }: { slug: string }) => {
         </div>
       </div>
 
-      <div>
+      <div className="mb-28 xl:mb-40">
         <Gallery gallery={gallery} />
       </div>
 
