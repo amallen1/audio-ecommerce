@@ -5,6 +5,7 @@ import Button from "../Button";
 import data from "../../data.json";
 import QuantitySelector from "../QuantitySelector";
 import Gallery from "./Gallery";
+import RelatedProducts from "./RelatedProducts";
 
 interface Image {
   mobile: string;
@@ -57,6 +58,7 @@ const ProductDetail = ({ slug }: { slug: string }) => {
     price,
     includes,
     gallery,
+    others,
   } = productData;
 
   return (
@@ -146,6 +148,10 @@ const ProductDetail = ({ slug }: { slug: string }) => {
 
       <div>
         <Gallery gallery={gallery} />
+      </div>
+
+      <div>
+       <RelatedProducts others={others}/>
       </div>
     </div>
   );

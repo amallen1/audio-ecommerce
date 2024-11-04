@@ -18,6 +18,7 @@ const SpeakersCategoryPage = () => {
                 description={product.description}
                 isNew={product.new}
                 alternateOrder={alternateOrder}
+                slug={product.slug}
               />
             );
           })}

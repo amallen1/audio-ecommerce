@@ -12,7 +12,6 @@ interface ProductProps {
   description: string;
   alternateOrder: boolean;
   slug: string;
-  category: string;
 }
 
 const ProductPreview = ({
@@ -22,7 +21,6 @@ const ProductPreview = ({
   description,
   alternateOrder,
   slug,
-  category,
 }: ProductProps) => {
   return (
     <div className="xl:flex xl:items-center xl:gap-x-[125px]">
@@ -63,7 +61,7 @@ const ProductPreview = ({
           {name}
         </h2>
         <p className="mb-6 md:px-16 xl:px-0 xl:mb-10">{description}</p>
-        <Button variant="primary" urlLink={`/products/${category}/${slug}`}>
+        <Button variant="primary" urlLink={`/products/${slug}`}>
           See Product
         </Button>
       </div>

@@ -18,7 +18,6 @@ const HeadphonesCategoryPage = () => {
                 isNew={product.new}
                 alternateOrder={alternateOrder}
                 slug={product.slug}
-                category={product.category}
               />
             );
           })
