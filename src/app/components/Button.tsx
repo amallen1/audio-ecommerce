@@ -24,9 +24,9 @@ const Button = ({
   const baseClasses = `px-[30px] py-[15px] text-[13px] font-bold tracking-[1px] uppercase leading-[18px]`;
 
   const variantClasses = {
-    primary: `bg-orange-200 hover:bg-orange-100`,
-    secondary: `bg-transparent text-black border border-black hover:bg-black hover:text-white`,
-    transparent: `bg-black hover:bg-[#4c4c4c]`,
+    primary: `bg-orange-200 text-white hover:bg-orange-100`,
+    secondary: `bg-black text-white hover:bg-[#4c4c4c]`,
+    transparent: `bg-transparent text-black border border-black hover:bg-black hover:text-white`,
   };
 
   const variantStyles = variantClasses[variant];

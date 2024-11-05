@@ -39,13 +39,13 @@ const FeaturedProducts = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Button variant="transparent"> See product</Button>
+          <Button variant="secondary"> See product</Button>
         </div>
       </div>
 
       <div className="bg-mobile-zx7 bg-cover bg-center mb-6 rounded-lg pl-6 py-[101px] md:bg-tablet-zx7 md:pl-16 md:mb-8 lg:pl-24 xl:bg-desktop-zx7 xl:mb-12">
         <h2 className="text-3xl text-black mb-8 tracking-[2px]">ZX7 Speaker</h2>
-        <Button variant="secondary">See Product</Button>
+        <Button variant="transparent">See Product</Button>
       </div>
 
       <div className="md:grid md:grid-cols-2 md:gap-x-[11px] xl:gap-x-[30px]">
@@ -54,7 +54,7 @@ const FeaturedProducts = () => {
           <h2 className="text-3xl text-black mb-8 tracking-[2px]">
             YX1 earphones
           </h2>
-          <Button variant="secondary">See Product</Button>
+          <Button variant="transparent">See Product</Button>
         </div>
       </div>
     </div>

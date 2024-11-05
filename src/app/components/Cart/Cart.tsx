@@ -39,7 +39,8 @@ const Cart = ({
         <p className="text-black font-bold text-lg">$5,302</p>
       </div>
 
-      <Button variant="primary" fullWidth={true}>
+      {/* TODO: make modal close on url redirect */}
+      <Button variant="primary" urlLink={"/checkout"}fullWidth={true}>
         Checkout
       </Button>
     </div>
