@@ -1,13 +1,11 @@
+"use client";
+import { useContext } from "react";
+import { ModalContext } from "@/app/context/ModalContext";
 import Button from "../Button";
 import CartItem from "./CartItem";
 
-const Cart = ({
-  isCartOpen,
-  setIsCartOpen,
-}: {
-  isCartOpen: boolean;
-  setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+const Cart = () => {
+  const { isCartOpen, setIsCartOpen } = useContext(ModalContext);
   return (
     <div className="bg-white rounded-lg px-7 py-8 max-w-[377px] smd:w-[377px]">
       <div className="flex items-center justify-between mb-8">
@@ -40,7 +38,12 @@ const Cart = ({
       </div>
 
       {/* TODO: make modal close on url redirect */}
-      <Button variant="primary" urlLink={"/checkout"}fullWidth={true}>
+      <Button
+        variant="primary"
+        urlLink={"/checkout"}
+        fullWidth={true}
+        onClose={() => setIsCartOpen(false)}
+      >
         Checkout
       </Button>
     </div>

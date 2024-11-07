@@ -6,10 +6,13 @@ import { useState } from "react";
 import NavLinks from "./NavLinks";
 import MenuModal from "./Modal/MenuModal";
 import CartModal from "./Modal/CartModal";
+import { useContext } from "react";
+import { ModalContext } from "../context/ModalContext";
 
 const Nav = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
+  const { isMenuOpen, setIsMenuOpen, isCartOpen, setIsCartOpen } =
+    useContext(ModalContext);
+
   const pathname = usePathname();
   return (
     <header
@@ -51,10 +54,10 @@ const Nav = () => {
         </div>
       </nav>
       {isMenuOpen && (
-        <MenuModal isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        <MenuModal />
       )}
       {isCartOpen && (
-        <CartModal isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+        <CartModal />
       )}
     </header>
   );

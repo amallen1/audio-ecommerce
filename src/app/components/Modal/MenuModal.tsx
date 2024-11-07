@@ -1,13 +1,11 @@
+"use client";
 import { Dialog, DialogPanel, DialogBackdrop } from "@headlessui/react";
 import CategoryLinks from "../Products/CategoryLinks";
+import { ModalContext } from "@/app/context/ModalContext";
+import { useContext } from "react";
 
-function MenuModal({
-  isMenuOpen,
-  setIsMenuOpen,
-}: {
-  isMenuOpen: boolean;
-  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+function MenuModal() {
+  const { isMenuOpen, setIsMenuOpen } = useContext(ModalContext);
   return (
     <>
       <Dialog

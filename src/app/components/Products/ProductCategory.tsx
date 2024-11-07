@@ -1,7 +1,11 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useContext } from "react";
+import { ModalContext } from "@/app/context/ModalContext";
 
 const ProductCategory = ({ category }: { category: string }) => {
+  const { setIsMenuOpen } = useContext(ModalContext);
   return (
     <div className="bg-gray-200 pb-6 rounded-lg flex flex-col items-center relative pt-20 flex-1 gap-x-[10px]">
       <Image
@@ -20,7 +24,7 @@ const ProductCategory = ({ category }: { category: string }) => {
         href={`/products/${category}`}
         passHref
         className="uppercase text-black/50 tracking-[1px] font-bold flex items-center gap-x-3 hover:text-orange-200"
-        // onClick={() => ctx?.setIsMenuOpen(!ctx?.isMenuOpen)}
+        onClick={() => setIsMenuOpen(false)}
       >
         Shop
         <Image

@@ -9,6 +9,7 @@ interface ButtonsProps {
   actionType?: "link" | "addToCart" | "checkout";
   urlLink?: string;
   category?: string;
+  onClose?: () => void;
 }
 
 const Button = ({
@@ -18,6 +19,7 @@ const Button = ({
   className = "",
   actionType = "link",
   urlLink = "",
+  onClose,
 }: ButtonsProps) => {
   const router = useRouter();
 
@@ -35,6 +37,7 @@ const Button = ({
   const handleClick = () => {
     if (actionType === "link") {
       router.push(urlLink);
+      onClose?.()
     } else if (actionType === "addToCart") {
       //Todo
     } else {
