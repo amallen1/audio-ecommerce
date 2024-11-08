@@ -61,7 +61,7 @@ const ProductPreview = ({
           {name}
         </h2>
         <p className="mb-6 md:px-16 xl:px-0 xl:mb-10">{description}</p>
-        <Button variant="primary" urlLink={`/products/${slug}`}>
+        <Button variant="primary" to={`/products/${slug}`}>
           See Product
         </Button>
       </div>

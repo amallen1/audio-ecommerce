@@ -16,7 +16,7 @@ const CheckoutSummary = () => {
         <p>Grand Total</p>
         <p>Amount</p>
       </div>
-      <Button variant="primary" fullWidth>Continue and Pay</Button>
+      <Button variant="primary" className="w-full">Continue and Pay</Button>
     </div>
   );
 };

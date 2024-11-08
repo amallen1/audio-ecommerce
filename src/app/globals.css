@@ -45,3 +45,7 @@ input {
   letter-spacing: 1px;
   display: block;
 }
+
+.disabled {
+  @apply bg-gray-500 hover:!bg-gray-400 cursor-not-allowed;
+}

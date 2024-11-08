@@ -6,6 +6,7 @@ import data from "../../data.json";
 import QuantitySelector from "../QuantitySelector";
 import Gallery from "./Gallery";
 import RelatedProducts from "./RelatedProducts";
+import useCartStore from "@/app/store/store";
 
 interface Image {
   mobile: string;
@@ -14,6 +15,7 @@ interface Image {
 }
 
 interface ProductProps {
+  id: number;
   name: string;
   image: Image;
   category: string;
@@ -39,6 +41,8 @@ interface ProductProps {
 
 const ProductDetail = ({ slug }: { slug: string }) => {
   const router = useRouter();
+  const { cart, addToCart } = useCartStore();
+  console.log(cart);
 
   const productData: ProductProps | undefined = data.find(
     (item) => item.slug === slug
@@ -49,6 +53,7 @@ const ProductDetail = ({ slug }: { slug: string }) => {
   }
 
   const {
+    id,
     name,
     image,
     category,
@@ -110,7 +115,20 @@ const ProductDetail = ({ slug }: { slug: string }) => {
 
           <div className="flex gap-x-6 mb-20">
             <QuantitySelector />
-            <Button variant="primary">Add to cart</Button>
+            <Button
+              variant="primary"
+              onClick={() =>
+                addToCart({
+                  id: id,
+                  slug: slug,
+                  name: name,
+                  price: price,
+                  quantity: 1,
+                })
+              }
+            >
+              Add to cart
+            </Button>
           </div>
         </div>
       </div>
@@ -131,7 +149,7 @@ const ProductDetail = ({ slug }: { slug: string }) => {
           <div>
             {includes.map((item) => {
               return (
-                <div className="flex gap-x-6 mb-2">
+                <div key={item.item} className="flex gap-x-6 mb-2">
                   <p className="text-orange-200 font-bold">{item.quantity}x</p>
                   <p>
                     {item.item
@@ -151,7 +169,7 @@ const ProductDetail = ({ slug }: { slug: string }) => {
       </div>
 
       <div>
-       <RelatedProducts others={others}/>
+        <RelatedProducts others={others} />
       </div>
     </div>
   );

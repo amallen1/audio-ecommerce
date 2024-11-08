@@ -25,7 +25,7 @@ const RelatedProducts = ({ others }: RelatedProductsProps) => {
       <div className="flex flex-col gap-y-14 md:flex-row md:gap-x-3">
         {others.map((item) => {
           return (
-            <div>
+            <div key={item.name}>
               <div>
                 <Image
                   src={item.image.mobile}
@@ -53,7 +53,7 @@ const RelatedProducts = ({ others }: RelatedProductsProps) => {
               </div>
 
               <h2 className="text-2xl tracking-[1.33px] mb-8">{item.name}</h2>
-              <Button variant="primary" urlLink={`/products/${item.slug}`}>
+              <Button variant="primary" to={`/products/${item.slug}`}>
                 See Product
               </Button>
             </div>

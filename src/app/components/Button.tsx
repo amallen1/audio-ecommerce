@@ -3,22 +3,22 @@ import { useRouter } from "next/navigation";
 
 interface ButtonsProps {
   children: React.ReactNode;
+  type?: "submit" | "button";
   variant: "primary" | "secondary" | "transparent";
-  fullWidth?: boolean;
   className?: string;
-  actionType?: "link" | "addToCart" | "checkout";
-  urlLink?: string;
-  category?: string;
+
+  to?: string; //optional link path
+  onClick?: () => void;
   onClose?: () => void;
 }
 
 const Button = ({
   children,
   variant,
-  fullWidth = false,
   className = "",
-  actionType = "link",
-  urlLink = "",
+  type,
+  to,
+  onClick,
   onClose,
 }: ButtonsProps) => {
   const router = useRouter();
@@ -32,23 +32,20 @@ const Button = ({
   };
 
   const variantStyles = variantClasses[variant];
-  const fullWidthClass = fullWidth ? "w-full" : "";
 
   const handleClick = () => {
-    if (actionType === "link") {
-      router.push(urlLink);
-      onClose?.()
-    } else if (actionType === "addToCart") {
-      //Todo
-    } else {
-      //checkout actions
+    onClick?.();
+    console.log("Button was clicked");
+    if (to) {
+      router.push(to);
     }
   };
 
   return (
     <button
-      className={`${baseClasses} ${variantStyles} ${fullWidthClass} ${className}`}
+      className={`${baseClasses} ${variantStyles} ${className}`}
       onClick={handleClick}
+      disabled={className.includes("disabled")}
     >
       {children}
     </button>
