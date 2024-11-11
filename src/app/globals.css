@@ -29,7 +29,7 @@ input {
 }
 
 .input-box {
-  @apply flex flex-col mb-4;
+  @apply flex flex-col mb-6;
 }
 
 .text-overline {

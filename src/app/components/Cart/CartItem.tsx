@@ -3,8 +3,14 @@ import QuantitySelector from "../QuantitySelector";
 import { CartItemInterface } from "@/app/interfaces/cart.interfaces";
 import { useState } from "react";
 
-const CartItem = ({ id, slug, name, price, quantity }: CartItemInterface) => {
-
+const CartItem = ({
+  id,
+  slug,
+  name,
+  price,
+  quantity,
+  checkOut,
+}: CartItemInterface) => {
   const [itemQuantity, setItemQuantity] = useState(quantity);
 
   return (
@@ -25,12 +31,16 @@ const CartItem = ({ id, slug, name, price, quantity }: CartItemInterface) => {
         </div>
       </div>
 
-      <QuantitySelector
-        name={name}
-        quantity={itemQuantity}
-        setQuantity={setItemQuantity}
-        isInCart={true}
-      />
+      {checkOut ? (
+        <p className="text-black/50 font-bold">x{quantity}</p>
+      ) : (
+        <QuantitySelector
+          name={name}
+          quantity={itemQuantity}
+          setQuantity={setItemQuantity}
+          isInCart={true}
+        />
+      )}
     </div>
   );
 };
