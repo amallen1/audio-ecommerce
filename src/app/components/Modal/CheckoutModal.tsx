@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import { ModalContext } from "@/app/context/ModalContext";
 import { Dialog, DialogPanel, DialogBackdrop } from "@headlessui/react";
-import CheckoutMessage from "../CheckoutMessage";
+import CheckoutMessage from "../Checkout/CheckoutMessage";
 
 const CheckoutModal = () => {
   const { isCheckoutComplete, setIsCheckoutComplete } =

@@ -12,7 +12,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-24 max-w-[327px] m-auto smd:max-w-mobile md:max-w-tablet  lg:pt-0 lg:max-w-desktop-sm xl:py-28 xl:max-w-desktop-lg xl:pb-48">
+      <div className="px-3 sm:px-0 py-24 max-w-[327px] m-auto smd:max-w-mobile md:max-w-tablet  lg:pt-0 lg:max-w-desktop-sm xl:py-28 xl:max-w-desktop-lg xl:pb-48">
         <div className="mb-28 md:mb-24 xl:mb-40">
           <CategoryLinks />
         </div>

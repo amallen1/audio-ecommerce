@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
-import { ModalContext } from "../context/ModalContext";
+import { ModalContext } from "../../context/ModalContext";
 import { useContext } from "react";
-import Button from "./Button";
-import useCartStore from "../store/store";
-import CartItem from "./Cart/CartItem";
-import CheckoutModal from "./Modal/CheckoutModal";
+import Button from "../Button";
+import useCartStore from "../../store/store";
+import CartItem from "../Cart/CartItem";
+import CheckoutModal from "../Modal/CheckoutModal";
 
 const CheckoutForm = () => {
   const { register, handleSubmit } = useForm();

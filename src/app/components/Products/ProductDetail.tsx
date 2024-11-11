@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Button from "../Button";
 import data from "../../data.json";
-import QuantitySelector from "../QuantitySelector";
+import QuantitySelector from "./QuantitySelector";
 import Gallery from "./Gallery";
 import RelatedProducts from "./RelatedProducts";
 import useCartStore from "@/app/store/store";
@@ -102,11 +102,11 @@ const ProductDetail = ({ slug }: { slug: string }) => {
         </div>
         <div className="md:flex-1">
           {isNew ? (
-            <span className="text-overline text-orange-200 tracking-[10px] text-sm mb-6 block xl:mb-4">
+            <span className="text-overline text-orange-200 mb-6 xl:mb-4">
               New product
             </span>
           ) : null}
-          <h2 className="text-black text-3xl tracking-[1px] mb-6 md:text-[2.5rem]/[2.75rem] md:tracking-[1.43px] xl:mb-8">
+          <h2 className="text-3xl tracking-[1px] mb-6 md:text-[2.5rem]/[2.75rem] md:tracking-[1.43px] xl:mb-8">
             {name}
           </h2>
           <p className="mb-6 px-0 md:mb-8">{description}</p>
@@ -121,7 +121,6 @@ const ProductDetail = ({ slug }: { slug: string }) => {
               setQuantity={setQuantity}
             />
 
-            {/* disable add to cart if quantity is 0 */}
             <Button
               variant="primary"
               onClick={() =>
@@ -133,6 +132,7 @@ const ProductDetail = ({ slug }: { slug: string }) => {
                   quantity: quantity,
                 })
               }
+              className={`${quantity === 0 && "disabled"}`}
             >
               Add to cart
             </Button>

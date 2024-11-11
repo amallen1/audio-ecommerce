@@ -39,22 +39,26 @@ const FeaturedProducts = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Button variant="secondary"> See product</Button>
+          <Button variant="secondary" to="/products/zx9-speaker"> See product</Button>
         </div>
       </div>
 
       <div className="bg-mobile-zx7 bg-cover bg-center mb-6 rounded-lg pl-6 py-[101px] md:bg-tablet-zx7 md:pl-16 md:mb-8 lg:pl-24 xl:bg-desktop-zx7 xl:mb-12">
-        <h2 className="text-3xl text-black mb-8 tracking-[2px]">ZX7 Speaker</h2>
-        <Button variant="transparent">See Product</Button>
+        <h2 className="text-3xl mb-8 tracking-[2px]">ZX7 Speaker</h2>
+        <Button variant="transparent" to="/products/zx7-speakers">
+          See Product
+        </Button>
       </div>
 
       <div className="md:grid md:grid-cols-2 md:gap-x-[11px] xl:gap-x-[30px]">
         <div className="bg-mobile-yx1 bg-no-repeat h-[200px] bg-center rounded-lg bg-cover mb-6 md:mb-0 md:h-[320px] md:bg-tablet-yx1 lg:bg-desktop-yx1" />
         <div className="pl-6 py-10 bg-gray-200 rounded-lg md:pl-10 md:py-[101px]">
-          <h2 className="text-3xl text-black mb-8 tracking-[2px]">
+          <h2 className="text-3xl mb-8 tracking-[2px]">
             YX1 earphones
           </h2>
-          <Button variant="transparent">See Product</Button>
+          <Button variant="transparent" to="/products/yx1-earphones">
+            See Product
+          </Button>
         </div>
       </div>
     </div>

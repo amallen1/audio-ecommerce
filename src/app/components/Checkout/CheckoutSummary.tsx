@@ -1,6 +1,6 @@
-import Button from "./Button";
-import useCartStore from "../store/store";
-import CartItem from "./Cart/CartItem";
+import Button from "../Button";
+import useCartStore from "../../store/store";
+import CartItem from "../Cart/CartItem";
 
 const CheckoutSummary = () => {
   const { cart, cartTotal } = useCartStore();

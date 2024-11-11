@@ -2,50 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-p {
-  font-size: 0.9375rem;
-  font-weight: 500;
-  line-height: 25px;
-  color: rgba(0, 0, 0, 0.5);
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply uppercase font-bold text-black;
+  }
+
+  p {
+    @apply text-[.9375rem] font-medium leading-[25px] text-black/50;
+  }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: black;
+@layer components {
+  label {
+    @apply mb-2 font-bold text-xs tracking-[-0.21px];
+  }
+
+  input {
+    @apply rounded-lg py-4 px-6 border-[1px] border-[#CFCFCF] font-bold text-sm tracking-[-0.25px] focus-within:border-orange-200;
+  }
+
+  .input-box {
+    @apply flex flex-col mb-6;
+  }
+
+  .text-overline {
+    @apply uppercase block;
+  }
+
+  .text-subtitle {
+    @apply uppercase block text-orange-200;
+  }
 }
 
-label {
-  @apply mb-2 font-bold text-xs tracking-[-0.21px]
-}
-
-input {
-  @apply rounded-lg py-4 px-6 border-[1px] border-[#CFCFCF] font-bold text-sm tracking-[-0.25px] focus-within:border-orange-200;
-}
-
-.input-box {
-  @apply flex flex-col mb-6;
-}
-
-.text-overline {
-  text-transform: uppercase;
-}
-
-.text-subtitle {
-  color: #d87d4a;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 25px;
-  letter-spacing: 1px;
-  display: block;
-}
-
-.disabled {
-  @apply bg-gray-500 hover:!bg-gray-400 cursor-not-allowed;
+@layer utilities {
+  .disabled {
+    @apply bg-gray-400 hover:!bg-gray-300 cursor-not-allowed;
+  }
 }

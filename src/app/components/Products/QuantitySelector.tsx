@@ -1,5 +1,5 @@
 "use client";
-import useCartStore from "../store/store";
+import useCartStore from "../../store/store";
 
 interface QuantitySelectorProps {
   name: string;
@@ -14,7 +14,6 @@ const QuantitySelector = ({
   setQuantity,
   isInCart,
 }: QuantitySelectorProps) => {
-  
   const { cart, updateItemQuantity } = useCartStore();
 
   const increment = () => {

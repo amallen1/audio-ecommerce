@@ -18,7 +18,7 @@ interface RelatedProductsProps {
 const RelatedProducts = ({ others }: RelatedProductsProps) => {
   return (
     <div className="text-center">
-      <h2 className="uppercase text-2xl tracking-[0.89px] mb-10">
+      <h2 className="text-2xl tracking-[0.89px] mb-10">
         You may also like
       </h2>
 
@@ -40,7 +40,7 @@ const RelatedProducts = ({ others }: RelatedProductsProps) => {
                   width={327}
                   height={120}
                   alt={`${item.name}`}
-                  className="rounded-lg mb-8 m-auto md:block xl:hidden"
+                  className="rounded-lg mb-8 m-auto hidden md:block xl:hidden"
                 />
 
                 <Image

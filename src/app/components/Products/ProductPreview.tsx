@@ -53,7 +53,7 @@ const ProductPreview = ({
       </div>
       <div className="text-center xl:text-left xl:flex-1">
         {isNew ? (
-          <span className="text-overline text-orange-200 tracking-[10px] text-sm mb-6 block xl:mb-4">
+          <span className="text-overline text-orange-200 mb-6 xl:mb-4">
             New product
           </span>
         ) : null}

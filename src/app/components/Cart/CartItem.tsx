@@ -1,5 +1,5 @@
 import Image from "next/image";
-import QuantitySelector from "../QuantitySelector";
+import QuantitySelector from "../Products/QuantitySelector";
 import { CartItemInterface } from "@/app/interfaces/cart.interfaces";
 import { useState } from "react";
 

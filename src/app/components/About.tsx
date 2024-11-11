@@ -29,7 +29,7 @@ const About = () => {
       </div>
 
       <div className="max-w-[572px] m-auto lg:text-left">
-        <h2 className="uppercase text-black text-[28px] tracking-[1px] mb-8 smd:px-12 md:text-[40px]/[44px] md:px-0 xl:pr-10">
+        <h2 className="text-[28px] tracking-[1px] mb-8 smd:px-12 md:text-[40px]/[44px] md:px-0 xl:pr-10">
           Bringing you the <span className="text-orange-200">best</span> audio
           gear
         </h2>

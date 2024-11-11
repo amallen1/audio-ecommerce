@@ -20,7 +20,7 @@ export default function CategoryLayout({
         </div>
       )}
 
-      <div className="pt-16 mb-28 max-w-[327px] m-auto smd:max-w-mobile md:max-w-tablet md:pt-28 lg:max-w-desktop-sm xl:pt-28 xl:max-w-desktop-lg xl:mb-40">
+      <div className=" px-3 sm:px-0 pt-16 mb-28 max-w-[327px] m-auto smd:max-w-mobile md:max-w-tablet md:pt-28 lg:max-w-desktop-sm xl:pt-28 xl:max-w-desktop-lg xl:mb-40">
         <div>{children}</div>
 
         <div className="mt-44 mb-28 xl:mb-40">

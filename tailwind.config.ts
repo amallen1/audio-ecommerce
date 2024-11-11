@@ -50,8 +50,16 @@ const config: Config = {
           "0.875rem",
           {
             lineHeight: "1.1875rem",
-            letterSpacing: ".625rem",
+            letterSpacing: ".625em",
             fontWeight: "400",
+          },
+        ],
+        subtitle: [
+          "0.8125rem",
+          {
+            lineHeight: "25px",
+            letterSpacing: "1px",
+            fontWeight: "700",
           },
         ],
       },
