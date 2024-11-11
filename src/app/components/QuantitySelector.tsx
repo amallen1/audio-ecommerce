@@ -1,27 +1,41 @@
 "use client";
-import { useState } from "react";
+import useCartStore from "../store/store";
 
-const QuantitySelector = () => {
-  const [quantity, setQuantity] = useState<number>(0);
+interface QuantitySelectorProps {
+  name: string;
+  quantity: number;
+  setQuantity: React.Dispatch<React.SetStateAction<number>>;
+  isInCart?: boolean;
+}
+
+const QuantitySelector = ({
+  name,
+  quantity,
+  setQuantity,
+  isInCart,
+}: QuantitySelectorProps) => {
+  
+  const { cart, updateItemQuantity } = useCartStore();
 
   const increment = () => {
+    if (cart.find((item) => item.name === name) && isInCart) {
+      updateItemQuantity(name, quantity + 1);
+    }
     setQuantity((prev) => prev + 1);
   };
 
   const decrement = () => {
-    if (quantity > 0) {
-      setQuantity((prev) => prev - 1);
+    if (cart.find((item) => item.name === name) && isInCart) {
+      updateItemQuantity(name, quantity - 1);
     }
+    setQuantity((prev) => prev - 1);
   };
 
   return (
-    <div className="bg-gray-200 flex gap-3 text-black px-3 py-2 w-[90px] justify-center items-center">
+    <div className="bg-gray-200 flex gap-3 text-black px-4 py-2 w-[96px] justify-center items-center">
       <button
-        className={`text-black/25 hover:text-orange-200 text-lg tracking-[1px] ${
-          quantity === 0 ? "cursor-not-allowed" : ""
-        }`}
+        className={`text-black/25 hover:text-orange-200 text-lg tracking-[1px]`}
         onClick={decrement}
-        disabled={quantity === 0}
       >
         -
       </button>

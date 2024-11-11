@@ -35,7 +35,6 @@ const Button = ({
 
   const handleClick = () => {
     onClick?.();
-    console.log("Button was clicked");
     if (to) {
       router.push(to);
     }

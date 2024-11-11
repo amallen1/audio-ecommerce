@@ -2,18 +2,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 import NavLinks from "./NavLinks";
 import MenuModal from "./Modal/MenuModal";
 import CartModal from "./Modal/CartModal";
 import { useContext } from "react";
 import { ModalContext } from "../context/ModalContext";
+import useCartStore from "../store/store";
 
 const Nav = () => {
   const { isMenuOpen, setIsMenuOpen, isCartOpen, setIsCartOpen } =
     useContext(ModalContext);
 
   const pathname = usePathname();
+  const { itemsInCart } = useCartStore();
+
   return (
     <header
       className={`${pathname === "/" ? "bg-[rgb(25,25,25)]" : "bg-black"}
@@ -44,7 +46,13 @@ const Nav = () => {
           <NavLinks />
         </div>
 
-        <div onClick={() => setIsCartOpen(!isCartOpen)}>
+        <div
+          onClick={() => setIsCartOpen(!isCartOpen)}
+          className="cursor-pointer relative"
+        >
+          <div className="absolute -top-3 -right-3 bg-orange-200 rounded-full flex items-center justify-center w-5 h-5 font-bold text-white">
+            {itemsInCart}
+          </div>
           <Image
             src="/assets/shared/desktop/icon-cart.svg"
             width={23}
@@ -53,12 +61,8 @@ const Nav = () => {
           />
         </div>
       </nav>
-      {isMenuOpen && (
-        <MenuModal />
-      )}
-      {isCartOpen && (
-        <CartModal />
-      )}
+      {isMenuOpen && <MenuModal />}
+      {isCartOpen && <CartModal />}
     </header>
   );
 };

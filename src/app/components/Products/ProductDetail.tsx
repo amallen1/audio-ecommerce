@@ -7,6 +7,7 @@ import QuantitySelector from "../QuantitySelector";
 import Gallery from "./Gallery";
 import RelatedProducts from "./RelatedProducts";
 import useCartStore from "@/app/store/store";
+import { useState } from "react";
 
 interface Image {
   mobile: string;
@@ -41,8 +42,9 @@ interface ProductProps {
 
 const ProductDetail = ({ slug }: { slug: string }) => {
   const router = useRouter();
-  const { cart, addToCart } = useCartStore();
-  console.log(cart);
+  const { addToCart } = useCartStore();
+
+  const [quantity, setQuantity] = useState<number>(1);
 
   const productData: ProductProps | undefined = data.find(
     (item) => item.slug === slug
@@ -56,7 +58,6 @@ const ProductDetail = ({ slug }: { slug: string }) => {
     id,
     name,
     image,
-    category,
     new: isNew,
     description,
     features,
@@ -114,7 +115,13 @@ const ProductDetail = ({ slug }: { slug: string }) => {
           </p>
 
           <div className="flex gap-x-6 mb-20">
-            <QuantitySelector />
+            <QuantitySelector
+              name={name}
+              quantity={quantity}
+              setQuantity={setQuantity}
+            />
+
+            {/* disable add to cart if quantity is 0 */}
             <Button
               variant="primary"
               onClick={() =>
@@ -123,7 +130,7 @@ const ProductDetail = ({ slug }: { slug: string }) => {
                   slug: slug,
                   name: name,
                   price: price,
-                  quantity: 1,
+                  quantity: quantity,
                 })
               }
             >

@@ -14,7 +14,7 @@ const CartModal = () => {
         className="z-10"
       >
         <DialogBackdrop className="fixed inset-0 top-[90px] bg-black/40" />
-        <DialogPanel className="fixed top-[114px] right-0 min-[375px]:right-6 md:right-10 xl:right-[165px]">
+        <DialogPanel className="fixed top-[114px] right-1/2 transform translate-x-1/2 md:transform-none md:right-10 lg:right-16 xl:right-[165px]">
           <Cart />
         </DialogPanel>
       </Dialog>

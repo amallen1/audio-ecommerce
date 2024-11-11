@@ -1,9 +1,12 @@
 import Image from "next/image";
 import QuantitySelector from "../QuantitySelector";
 import { CartItemInterface } from "@/app/interfaces/cart.interfaces";
+import { useState } from "react";
 
 const CartItem = ({ id, slug, name, price, quantity }: CartItemInterface) => {
-  console.log(`cart quantity ${quantity}`);
+
+  const [itemQuantity, setItemQuantity] = useState(quantity);
+
   return (
     <div className="mb-6 flex justify-between items-center gap-x-6">
       <div className="flex items-center gap-x-4">
@@ -16,13 +19,18 @@ const CartItem = ({ id, slug, name, price, quantity }: CartItemInterface) => {
         />
         <div>
           <p className="text-black font-bold leading-[25px] text-base">
-            {name}
+            {name.split(" ").slice(0, -1).join(" ")}
           </p>
           <p className="text-black/50 font-bold">$ {price.toLocaleString()}</p>
         </div>
       </div>
 
-      <QuantitySelector />
+      <QuantitySelector
+        name={name}
+        quantity={itemQuantity}
+        setQuantity={setItemQuantity}
+        isInCart={true}
+      />
     </div>
   );
 };

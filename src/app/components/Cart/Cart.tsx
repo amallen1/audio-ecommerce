@@ -6,18 +6,24 @@ import CartItem from "./CartItem";
 import useCartStore from "@/app/store/store";
 
 const Cart = () => {
-  const { cart, itemsInCart } = useCartStore();
+  const { cart, itemsInCart, removeAllItems, cartTotal } = useCartStore();
   const { isCartOpen, setIsCartOpen } = useContext(ModalContext);
-  console.log(`Cart Items ${cart.map((item) => console.log(item))}`);
 
   return (
-    <div className="bg-white rounded-lg px-7 py-8 max-w-[377px] smd:w-[377px]">
+    <div className="bg-white rounded-lg px-7 py-8 w-[327px] smd:w-[377px]">
       <div className="flex items-center justify-between mb-8">
         <p className="font-bold text-black tracking-[1.29px]">
           CART <span>({itemsInCart})</span>
         </p>
 
         <div>
+          <button
+            className="text-black/50 border-b-[1px] border-black/50 mr-6"
+            onClick={removeAllItems}
+          >
+            Remove all
+          </button>
+
           <button
             className="text-black font-bold"
             onClick={() => setIsCartOpen(!isCartOpen)}
@@ -26,9 +32,6 @@ const Cart = () => {
           </button>
         </div>
       </div>
-      {/* <button className="text-black/50 border-b-[1px] border-black/50 mr-6">
-          Remove all
-        </button> */}
 
       <div>
         {cart.map((item) => {
@@ -48,7 +51,9 @@ const Cart = () => {
       {cart.length !== 0 ? (
         <div className="flex justify-between items-center mb-6">
           <p className="text-black/50 text-[.9375rem]">TOTAL</p>
-          <p className="text-black font-bold text-lg">{}</p>
+          <p className="text-black font-bold text-lg">
+            $ {cartTotal.toLocaleString()}
+          </p>
         </div>
       ) : (
         <span className="font-bold text-2xl block mb-6 text-center">

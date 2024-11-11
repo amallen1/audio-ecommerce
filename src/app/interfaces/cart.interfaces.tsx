@@ -4,4 +4,5 @@ export interface CartItemInterface {
     name: string;
     price: number;
     quantity: number;
+    isInCart?:boolean;
   }

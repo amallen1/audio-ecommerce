@@ -8,7 +8,6 @@ const SpeakersCategoryPage = () => {
         data
           .filter((item) => item.category === "speakers")
           .map((product, index) => {
-            console.log(index);
             const alternateOrder: boolean = index % 2 !== 0;
             return (
               <ProductPreview
