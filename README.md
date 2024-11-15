@@ -30,16 +30,13 @@ Users should be able to:
 - See correct checkout totals depending on the products in the cart
   - Shipping always adds $50 to the order
 - See an order confirmation modal after checking out with an order summary
-- **Bonus**: Keep track of what's in the cart, even after refreshing the browser (`localStorage` could be used for this if you're not building out a full-stack app)
 
 ### Screenshot
 
 ![](./screenshot.jpg)
 
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
 - [Live Site](https://incredible-brioche-b790ae.netlify.app/)
 
 ## My process
@@ -48,10 +45,9 @@ Users should be able to:
 
 - Mobile-first workflow
 - Tailwind CSS
+- Headless UI
 - Next.js
 - Zustand
-
-### Continued development
 
 ## Author
 

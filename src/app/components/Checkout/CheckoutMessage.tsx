@@ -2,11 +2,23 @@ import Button from "../Button";
 import useCartStore from "../../store/store";
 import CartItem from "../Cart/CartItem";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useContext } from "react";
+import { ModalContext } from "@/app/context/ModalContext";
 
 const CheckoutMessage = () => {
-  const { cart, cartTotal, itemsInCart } = useCartStore();
-  const { id, slug, name, price, quantity } = cart[0];
-  const remainingItems: number = cart[0].quantity - itemsInCart;
+  const { cart, cartTotal, itemsInCart, removeAllItems } = useCartStore();
+  const { slug, name, price, quantity } = cart[0];
+  const remainingItems: number = Math.abs(cart[0].quantity - itemsInCart);
+  const { setIsCheckoutComplete } = useContext(ModalContext);
+  const router = useRouter();
+  const handleCompleteCheckout = () => {
+    router.push("/"); // Navigate back to home
+    setTimeout(() => {
+      removeAllItems(); // Clear the cart after redirect
+      setIsCheckoutComplete(false);
+    }, 100); // Delay to ensure navigation completes
+  };
   return (
     <div className="bg-white rounded-lg px-7 py-8 w-[327px] smd:w-[377px]">
       <Image
@@ -14,14 +26,13 @@ const CheckoutMessage = () => {
         width={64}
         height={64}
         className="mb-6"
-        alt="Check in circle"
+        alt="Checkout icon"
       />
       <h1 className="text-2xl mb-4">Thank you for your order</h1>
       <p className="mb-6">You will receive an email confirmation shortly.</p>
-      <div className="">
+      <div>
         <div className="p-6 bg-gray-200 rounded-tl-lg rounded-tr-lg">
           <CartItem
-            id={id}
             slug={slug}
             name={name}
             price={price}
@@ -42,7 +53,12 @@ const CheckoutMessage = () => {
           </p>
         </div>
       </div>
-      <Button variant="primary" to="/" className="w-full">
+      <Button
+        variant="primary"
+        to="/"
+        className="w-full"
+        onClick={handleCompleteCheckout}
+      >
         Back to home
       </Button>
     </div>

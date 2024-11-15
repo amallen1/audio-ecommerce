@@ -2,7 +2,6 @@ import Button from "../Button";
 import Image from "next/image";
 
 const FeaturedProducts = () => {
-  //
   return (
     <div>
       <div className="bg-orange-200 w-full rounded-lg py-14 px-6 bg-circle-pattern bg-cover bg-no-repeat bg-[center_-135px] flex flex-col items-center gap-y-8 mb-6 md:pb-16 md:gap-y-16 md:bg-[length:129%] md:bg-[center_-250px] md:mb-8 lg:flex-row lg:justify-center lg:overflow-hidden lg:gap-x-24 lg:py-10 lg:bg-[-167px_10%] lg:bg-[length:88%] xl:mb-12">
@@ -39,7 +38,9 @@ const FeaturedProducts = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Button variant="secondary" to="/products/zx9-speaker"> See product</Button>
+          <Button variant="secondary" to="/products/zx9-speaker">
+            See product
+          </Button>
         </div>
       </div>
 
@@ -53,9 +54,7 @@ const FeaturedProducts = () => {
       <div className="md:grid md:grid-cols-2 md:gap-x-[11px] xl:gap-x-[30px]">
         <div className="bg-mobile-yx1 bg-no-repeat h-[200px] bg-center rounded-lg bg-cover mb-6 md:mb-0 md:h-[320px] md:bg-tablet-yx1 lg:bg-desktop-yx1" />
         <div className="pl-6 py-10 bg-gray-200 rounded-lg md:pl-10 md:py-[101px]">
-          <h2 className="text-3xl mb-8 tracking-[2px]">
-            YX1 earphones
-          </h2>
+          <h2 className="text-3xl mb-8 tracking-[2px]">YX1 earphones</h2>
           <Button variant="transparent" to="/products/yx1-earphones">
             See Product
           </Button>

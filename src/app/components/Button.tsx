@@ -3,23 +3,18 @@ import { useRouter } from "next/navigation";
 
 interface ButtonsProps {
   children: React.ReactNode;
-  type?: "submit" | "button";
   variant: "primary" | "secondary" | "transparent";
   className?: string;
-
-  to?: string; //optional link path
+  to?: string; 
   onClick?: () => void;
-  onClose?: () => void;
 }
 
 const Button = ({
   children,
   variant,
   className = "",
-  type,
   to,
   onClick,
-  onClose,
 }: ButtonsProps) => {
   const router = useRouter();
 

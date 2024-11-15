@@ -4,7 +4,6 @@ import { CartItemInterface } from "@/app/interfaces/cart.interfaces";
 import { useState } from "react";
 
 const CartItem = ({
-  id,
   slug,
   name,
   price,

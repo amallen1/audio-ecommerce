@@ -23,7 +23,7 @@
   }
 
   input {
-    @apply rounded-lg py-4 px-6 border-[1px] border-[#CFCFCF] font-bold text-sm tracking-[-0.25px] focus-within:border-orange-200;
+    @apply rounded-lg py-4 px-6 border-[1px] border-[#CFCFCF] font-bold text-sm tracking-[-0.25px] outline-none focus:border-orange-200;
   }
 
   .input-box {
@@ -42,5 +42,13 @@
 @layer utilities {
   .disabled {
     @apply bg-gray-400 hover:!bg-gray-300 cursor-not-allowed;
+  }
+
+  .error {
+    @apply border border-red-500;
+  }
+
+  .errorText {
+    @apply font-bold text-xs text-red-500 tracking-[-0.21px];
   }
 }

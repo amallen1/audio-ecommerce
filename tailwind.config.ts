@@ -19,6 +19,9 @@ const config: Config = {
           100: "#FBAF85",
           200: "#D87D4A",
         },
+        red: {
+          500: "#CD2C2C"
+        }
       },
       screens: {
         sm: "375px",
