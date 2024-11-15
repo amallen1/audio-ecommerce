@@ -11,6 +11,7 @@ const CheckoutMessage = () => {
   const { slug, name, price, quantity } = cart[0];
   const remainingItems: number = Math.abs(cart[0].quantity - itemsInCart);
   const { setIsCheckoutComplete } = useContext(ModalContext);
+  const SHIPPING_FEE: number = 50;
   const router = useRouter();
   const handleCompleteCheckout = () => {
     router.push("/"); // Navigate back to home
@@ -49,13 +50,12 @@ const CheckoutMessage = () => {
         <div className="bg-black py-4 px-6 rounded-bl-lg rounded-br-lg mb-6">
           <p className="text-white/50 uppercase mb-2">Grand Total</p>
           <p className="text-white font-bold text-lg">
-            $ {cartTotal.toLocaleString()}
+            $ {(cartTotal + SHIPPING_FEE).toLocaleString()}
           </p>
         </div>
       </div>
       <Button
         variant="primary"
-        to="/"
         className="w-full"
         onClick={handleCompleteCheckout}
       >
