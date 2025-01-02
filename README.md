@@ -33,7 +33,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+| Mobile (375px)                                 | Desktop (1440px)                                 |
+| ---------------------------------------------- | ------------------------------------------------ |
+| ![Mobile](./screenshots/mobile_screenshot.png) | ![Desktop](./screenshots/desktop_screenshot.png) |
 
 ### Links
 
